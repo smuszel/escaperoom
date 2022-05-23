@@ -12,8 +12,8 @@
   body {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 60px;
-    padding-top: 100px;
+    padding: 0px;
+    padding-top: 30px;
     flex-wrap: wrap;
   }
   
@@ -24,9 +24,9 @@
 
 .flip-card {
   background-color: transparent;
-  width: 300px;
+  width: 100%;
   margin-bottom: 30px;
-  height: 200px;
+  height: var(--cardSize);
   perspective: 1000px;
 }
 
@@ -111,6 +111,18 @@
     i: '99, 99'
   }
 
+  let cardSize
+
+  if (window.outerWidth < 500) {
+    cardSize = 150
+  } else if (window.outerWidth < 800) {
+    cardSize = 200
+  }  else {
+    cardSize = 300
+  }
+
+  document.documentElement.style.setProperty('--cardSize', cardSize + 'px')
+
   const wrapInCard = (label, svg) => {
     const mainContainer = document.createElement('div')
     const innerContainer = document.createElement('div')
@@ -132,10 +144,11 @@
   }
 
   const fn = (label, dirs, target) => {
+
     const svg = document.createElementNS(xmlns, 'svg')
     // svg.setAttribute('style', 'border: 1px solid grey')
-    svg.setAttribute('height', '200')
-    svg.setAttribute('width', '200')
+    svg.setAttribute('height', cardSize)
+    svg.setAttribute('width', cardSize)
     svg.setAttribute('viewBox', '0 0 100 100')
 
     dirs.forEach(dir => {
