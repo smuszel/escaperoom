@@ -9,6 +9,8 @@
 
 <style>
 
+  
+
   body {
     display: flex;
     padding: 20px;
@@ -37,6 +39,10 @@
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card:active .flip-card-inner {
   transform: rotateY(180deg);
 }
 
@@ -76,6 +82,7 @@
 </body>
 
 <script>
+  document.addEventListener("touchstart", function() {}, true);
   const xmlns = "http://www.w3.org/2000/svg";
   const directive = ['ae']
 
