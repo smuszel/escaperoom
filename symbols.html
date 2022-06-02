@@ -73,30 +73,30 @@
   const xmlns = "http://www.w3.org/2000/svg";
   const directive = ['ae']
 
-  const alphabet = [
-    ['A', ['bfhdb']],
-    ['B', ['dab', 'fih']],
-    ['C', ['ad', 'fi']],
-    ['D', ['aei', 'gec']],
-    ['E', ['abfh']],
-    ['F', ['cfhg']],
-    ['G', ['adghifh']],
-    ['H', ['adgei']],
-    ['I', ['deb', 'ei']],
-    ['K', ['abcfedg']],
-    ['L', ['abcfihgda']],
-    ['M', ['aeghifcba']],
-    ['N', ['gdaecfi']],
-    ['O', ['gdabc', 'def']],
+  const xs = [
+    ['H', ['bfhdb']],
+    ['C', ['dab', 'fih']],
+    ['He', ['ad', 'fi']],
+    ['Li', ['aei', 'gec']],
+    ['Be', ['abfh']],
+    ['B', ['cfhg']],
+    ['N', ['adghifh']],
+    ['F', ['adgei']],
+    ['O', ['deb', 'ei']],
+    ['Al', ['abcfedg']],
+    ['Ne', ['abcfihgda']],
+    ['Na', ['aeghifcba']],
+    ['Mg', ['gdaecfi']],
+    ['Si', ['gdabc', 'def']],
     ['P', ['aec', 'dhf']],
-    ['R', ['ihgdb']],
-    ['S', ['adg', 'cfi']],
-    ['T', ['abc', 'beg', 'ei']],
-    ['U', ['dghifc']],
-    ['V', ['adg', 'db', 'dh']],
-    ['W', ['dabcf', 'beh']],
-    ['Y', ['adghefc']],
-    ['Z', ['cbadeghi']],
+    ['S', ['ihgdb']],
+    ['Ar', ['adg', 'cfi']],
+    ['Ni', ['abc', 'beg', 'ei']],
+    ['K', ['dghifc']],
+    ['Ca', ['adg', 'db', 'dh']],
+    ['Sc', ['dabcf', 'beh']],
+    ['Ti', ['adghefc']],
+    ['Cu', ['cbadeghi']],
   ]
 
   const letterToCoord = {
@@ -178,8 +178,8 @@
   target1.classList.add('column')
   target2.classList.add('column')
   
-  alphabet.slice(0, alphabet.length / 2 ).forEach((args) => fn(args[0], args[1], target1))
-  alphabet.slice(alphabet.length / 2, alphabet.length).forEach((args) => fn(args[0], args[1], target2))
+  xs.slice(0, xs.length / 2 ).forEach((args) => fn(args[0], args[1], target1))
+  xs.slice(xs.length / 2, xs.length).forEach((args) => fn(args[0], args[1], target2))
 
   document.body.appendChild(target1)
   document.body.appendChild(target2)
