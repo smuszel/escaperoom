@@ -113,7 +113,9 @@
 
   let cardSize
 
-  if (window.outerWidth < 500) {
+  if (window.outerWidth < 400) {
+    cardSize = 120
+  } else if (window.outerWidth < 500) {
     cardSize = 150
   } else if (window.outerWidth < 800) {
     cardSize = 200

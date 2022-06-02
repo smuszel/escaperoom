@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CrossingOut</title>
+</head>
+<style>
+
+body {
+  line-height: 0.8;
+  font-size: 25px;
+  width: 21cm;
+  height: 29.7cm;
+  padding: 1px;
+  line-break: anywhere;
+}
+
+span {
+  position: absolute;
+  background-color: red;
+}
+
+.sm {
+  width: 15px;
+  height: 20px;
+}
+
+.cu {
+  height: 20px;
+  width: 30px;
+}
+
+.ni {
+  height: 20px;
+  width: 26px;
+}
+
+.al {
+  height: 20px;
+  width: 28px;
+}
+
+.c1 {
+  top: 449px;
+  left: 290px;
+}
+
+.c2 {
+  top: 569px;
+  left: 359px;
+}
+
+.c3 {
+  top: 589px;
+  left: 361px;
+}
+
+.c4 {
+  top: 609px;
+  left: 313px;
+}
+
+.c5 {
+  top: 649px;
+  left: 218px;
+  width: 17px;
+}
+
+.c6 {
+  top: 589px;
+  left: 466px;
+  width: 15px;
+}
+
+
+.c7 {
+  top: 549px;
+  left: 478px;
+  width: 18px;
+}
+
+
+.c8 {
+  top: 529px;
+  left: 488px;
+  width: 17px;
+}
+
+
+.c9 {
+  top: 509px;
+  left: 535px;
+  width: 17px;
+}
+
+
+.c10 {
+  top: 549px;
+  left: 593px;
+  width: 18px;
+}
+
+
+.c11 {
+  top: 629px;
+  left: 570px;
+  width: 15px;
+}
+
+
+.c12 {
+  top: 349px;
+  left: 218px;
+  width: 17px;
+}
+
+.c13 {
+  top: 349px;
+  left: 218px;
+  width: 17px;
+}
+
+
+.c14 {
+  top: 349px;
+  left: 218px;
+  width: 17px;
+}
+
+.o1 {
+  top: 549px;
+  left: 348px;
+}
+
+.o2 {
+  top: 609px;
+  left: 357px;
+}
+
+.o3 {
+  top: 609px;
+  left: 297px;
+}
+
+.o4 {
+  top: 489px;
+  left: 283px;
+  width: 18px;
+}
+
+.o5 {
+  top: 649px;
+  left: 374px;
+  width: 20px;
+}
+
+.o6 {
+  top: 609px;
+  left: 455px;
+}
+
+.o7 {
+  top: 589px;
+  left: 449px;
+  width: 17px;
+}
+
+.o8 {
+  top: 549px;
+  left: 461px;
+  width: 16px;
+}
+
+.o9 {
+  top: 529px;
+  left: 555px;
+  width: 16px;
+}
+
+.o10 {
+  top: 529px;
+  left: 571px;
+  width: 18px;
+}
+
+.o11 {
+  top: 669px;
+  left: 545px;
+  width: 15px;
+}
+
+.o12 {
+  top: 669px;
+  left: 589px;
+  width: 17px;
+}
+
+.o13 {
+  top: 749px;
+  left: 488px;
+  width: 17px;
+}
+
+.o14 {
+  top: 729px;
+  left: 467px;
+  width: 19px;
+}
+
+.o15 {
+  top: 669px;
+  left: 497px;
+  width: 22px;
+}
+
+.o16 {
+  top: 349px;
+  left: 374px;
+  width: 16px;
+}
+
+.cu1 {
+  top: 449px;
+  left: 305px;
+}
+
+.cu2 {
+  top: 569px;
+  left: 228px;
+  width: 33px;
+}
+
+.cu3 {
+  top: 529px;
+  left: 261px;
+  width: 34px;
+}
+
+.cu4 {
+  top: 669px;
+  left: 386px;
+}
+
+.cu5 {
+  top: 629px;
+  left: 230px;
+  width: 34px;
+}
+
+.cu6 {
+  top: 569px;
+  left: 449px;
+  width: 30px;
+}
+
+.cu7 {
+  top: 569px;
+  left: 581px;
+  width: 30px;
+
+}
+
+.cu8 {
+  top: 609px;
+  left: 566px;
+  width: 33px;
+}
+
+.cu9 {
+  top: 649px;
+  left: 560px;
+  width: 30px;
+}
+
+.cu10 {
+  top: 689px;
+  left: 567px;
+  width: 32px;
+}
+
+.cu11 {
+  top: 749px;
+  left: 505px;
+  width: 30px;
+}
+
+.cu12 {
+  top: 649px;
+  left: 455px;
+  width: 39px;
+}
+
+.cu13 {
+  top: 569px;
+  left: 449px;
+  width: 30px;
+}
+
+.ni1 {
+  top: 489px;
+  left: 320px;
+}
+
+.ni2 {
+  top: 529px;
+  left: 343px;
+}
+
+.ni3 {
+  top: 609px;
+  left: 271px;
+}
+
+.ni4 {  
+  top: 609px;
+  left: 245px;
+}
+
+.ni5 {
+  top: 589px;
+  left: 228px;
+}
+
+.ni6 {
+  top: 549px;
+  left: 245px;
+  width: 25px;
+}
+
+.ni7 {
+  top: 629px;
+  left: 378px;
+}
+
+.ni8 {
+  top: 709px;
+  left: 559px;
+}
+
+.ni9 {
+  top: 669px;
+  left: 519px;
+}
+
+.ni10 {
+  top: 749px;
+  left: 460px;
+  width: 27px;
+}
+
+.al1 {
+  top: 469px;
+  left: 304px;
+}
+
+.al2 {
+  top: 509px;
+  left: 325px;
+}
+
+.al3 {
+  top: 509px;
+  left: 274px;
+  width: 25px;
+}
+
+.al4 {
+  top: 609px;
+  left: 328px;
+}
+
+.al5 {
+  top: 669px;
+  left: 219px;
+}
+
+.al6 {
+  top: 509px;
+  left: 510px;
+  width: 25px;
+}
+
+.al7 {
+  top: 589px;
+  left: 582px;
+  width: 26px;
+}
+
+.al8 {
+  top: 729px;
+  left: 544px;
+  width: 25px;
+}
+
+.al9 {
+  top: 749px;
+  left: 535px;
+  width: 25px;
+}
+
+.al10 {
+  top: 629px;
+  left: 447px;
+  width: 25px;
+}
+
+.al11 {
+  top: 509px;
+  left: 510px;
+  width: 25px;
+}
+
+</style>
+<body>
+  <div>KPBeFScFeCaCaBeKFeTiSiCaBMgCaLiSiFeCrFPNaHTiNArHBeCoPZnScKNTiCrTiPPBeCoCaNePFFNVScPBeMnSiCrSLiBeNaNaSiSSTiTiBCrNaNaNFeKFFLiVArZnHeNeFeScNaNCaVNNaVCrHKScNZnMnTiTiArMgLiLiMnBeArSiHBeBCoNSiBCaLiCoScHSNVCoBNaFeNaBeFeSiFeKScCrMgSiCoVNaHeCrFZnNaHeCoLiFMgVCoVNaKArKArHeZnArLiKPSiLiSiFeFeMgMgNSNeBeCaNeVCrLiCoBeMnMnHeCaTiMnCoNNeCrMnNeBeVPFeMnFLiBeBeNArCoKVNaFeNaCoSMgMnCrTiNeKCoMnPCoBeArFeArCrMnArBSNTiMgNaNKNHArHeTiVFePNaZnMgFArNZnLiNaCrBeHBNaLiTiZnKNeCaCaCoHeHeNeLiPHCaHScFeLiNeHeBeMnSKZnFSiNeNZnNeFeTiFKCaHArKFeMgKCoFeVNeArMgSNMnNeTiBScCaNaKScNLiArCaHZnLiCoFFeHeNaLiCrCrSNCrSiKPZnArSiHPFeCoTiArScKSiHeFeSiArPMgFFBZnArFeCrTiSiMgNeScBLiKLiZnPMnNeScFeKMnBFNHeNeLiSiMgBeFePSiMnArNeBHMnNeBeVHeScSiCrSScLiCoFHMgPNePArMgFeNeBArBSArVBHFeMgFeScScArCaFTiNeSCaHeSiCaNSScCoSiCrNeCoSiNaCoMnNeKNaMgArTiSCaTiArFCaSTiTiNTiFeSNCrCaFFLiSiCoBSMgKZnVHArMgMgMnMnScSiCoCaSiCoArCrMgScNeVSBSiSLiHeNeVSHeBSiScNNaVFMnNaScBNaZnZnSiMnZnSiHHSiTiNeZnNeNeNBTiNHeMnSiNeBArKCoFeTiCoTiCaFArMnPFLiScFVTiVNMgZnNeVMgHCoFMnTiSNaNNVFFeLiTiBeCoPCaNTiFePNeCrBeMnBeFeKZnZnBZnBeLiMnKNeKNeTiHNVHeMgNaLiHeFArTiCaLiScVZnTiMgMgCaCoBeMgFeCrArZnArNeMgArNeCrArCaMnCrCaZnCoZnCaVBMgZnBeNaVPMnKCaCrTiCrCoCrScSCaMnMnMnCoTiSiScPMgArFeVCrZnPFeMgArArVCrCaSNeBeHVBeTiMgFeCrVZnPZnZnZnHCrSFeSiFLiNaPNeNeNaTiMgCrZnSCaBZnArNCaHKNaZnMgBeBNScSBeZnVNCrHHeFeKSiNHSiNArScLiNeHMnNeCaLiSiZnVCoSiLiHSiNaFNFeNePVCaCaSiMnScTiBeCrHeScHScKScKHBeNaNaCrBeSiZnLiSiHPSiZnHSFeSMgNaHeKZnNeZnCoBScKScSiCaFeCrNaCrBeNeArSiNeTiKTiSNeSArFeCoHeTiHSScZnArMgFeNaPSTiMnMgArLiFeNLiFeCaCrBArFeFSiPFeSBPBeSSiHScLiSiBeKMgPMgKZnPZnTiSiBeHSBMnMnArBKSiScLiNeHScKFeSiHHBeSiBBHeVMgVHZnArNeMnSiFeBeFeFZnLiFeHeCaFMnArNaFZnNNaMnMgZnNBMgSiHeFeSKSHeFeCoCoNaSiFFeKNaHFNaBeFeSiCrFBeArHeHNeFNaFSHeKFeNFeVFeFeFeTiNeKPNaBArTiMnSSiTiCaCrMnHeHHeFeMnHeKHeNaNeFHeVMgPBeSMgFScFBeMnTiBeHCrScBeTiScPNCoZnCrLiScCaSiHZnBKFNeBeBHeNeKCrFCaSiSiNaSiMnArPFeHSiZnHeCoVScPFeMnHCaBSiBZnCoZnVScZnBHeCrZnNaSLiTiBeSSScBeCrCrPCoKArFMnMnScCaCoTiHeZnMgScPCaFeBTiHeKNeLiMgBCaCoFeLiBeSHMnNHSiMgBeVHTiZnZnCoNeCrMgHFeFeNeNNaBHeLiSCaMnZnArKCoNaArScNaArSiBZnHeSCrTiHeFArLiNeMnMgScHHeNaCrNeBePCrSiHNLiLiFBHeSHSiPSCrSiNeCaCrFNaZnNeArVTiHFeMnZnBeTiScKScCrHeNCoCrMgCrArCaNePKKNeHHScBeNaScBeLiLiLiBCaKMnZnMnZnCoCrNBeKHMnFVBZnMnVBBeKBScNaArSiNHeNaBSiSiSiZnNeHMgCaCaScCaVHNaSBeBeHCoFHeNBeLiSSiLiMnTiTiBeScLiHPPMgBBHeSArFTiBKVScSiCrCaScSiNeSTiArCrCoBArNSiBeNArBArBeNMnTiNSiArScLiVNeVCaVBeKSKBCaFSFFeLiLiFSHeZnCoNeFePFBePNHCoCrMnFeBeVFeHeNeTiVNBFeSiFNaSFeMnNeSiFZnNCaHeHeTiPMnSScKScCaScSiFeBCaScSiKArHFeFeSiZnCaCaNeTiNeBCoBeZnFNaKArCoCoCrCaFeCaZnSiScNaZnSiBeMnCrMgSMnBPNCoVNBeCrHFeNaMgKVMnHeMgLiHZnCoMnNBeBCoScHeSiMnSiKNMnMnLiCrZnLiCaNLiHNaMnPFeMgLiTiCoTiCrVTiCrSNaZnFeLiZnBCrCrHPSScLiFeHMgCrSFeMnMnCaSiScTiFeFScCaHNArSiCrNeSiNHHeMgBeVPSKPNeBSiTiBFeBScTiCoHTiCoLiPSiMnSiNCoTiFLiSiPSVNSiTiBeMnMnScTiScFeMnCoKLiCoSNZnNHCoMnMnMgPCaScFHLiNHBeTiVBeBeZnMgFeCrHCaNeHVCrNeVNBTiHeCaTiArLiArKKCaKVPSiSiCrBeCoFMnNaCrMnBKHNeNBeLiSCaCoMnFLiBNeSiFFLiFMnArScSiSiKFeVFBFVNBZnKCrCaNeBeNaLiTiKBArHeZnBCoArNArNSPVLiKMnHeVFeNMgKVCaTiCaNeScCaCaHSCrMnFArZnSiNeLiNaMnNeSLiScSiNaHeNaSCrMgScSiArBNaSiFeKBeCoCrFCrPCaCoTiSiCaVNeZnHVMgFNaSMgNNaMnBeHeBePBeHScScNeArCrZnMnFSKArNCaKKScCrVNFeNeKTiZnNeNeHNaFeZnMgLiMgNaNeNeVVHNaMgCrCrCaSPCoBePKBeCaKFeArBeMnHNZnHeNZnFMnNBeZnMgMgCaHeFSMnBeFeHeHNNaScVNSNeCoZnKFLiBBBVCoArCrHNaCrSiVSiCaHArBKKFeSiMgHeFeCoSFKCrCrSSCaFBPTiZnNeLiNeCoCaCaSVBeMnKCoPNeHCrNeFNaFeMnVPTiCrHeCrArFSiSKSSiVLiMgTiSiCrBeVFMgMgTiSiSZnNaPCrSiCaZnSSiMgSiPPPMgCoArVSiBSScBeBeCrFPCaNaArSiTiScHSiSiLiNaMnHPHTiCoFeBMgVBeTiBeLiCoPCoHFeBKSCaNeVSMgFeMgNaFVZnArFFeZnBeSiFeCaFeHNaFeCrMnKPCrNeBPMnHCaTiBeCaFScFMgHFMnFCoHeArTiCaPPNeScPBFBeMnLiMgMgZnSiPCrArFeHHNFMgCaScHHeHHePHFeBZnArArHNeHMgFTiLiSiCrZnFBNeMgNeBeArSiMnCoCrZnScCaNaNeBeCoKNaBeSiPCrSCoCrScArSiFeSiSNeMnMnNeBMgCoZnBeMnNSLiScNeArVCaNaBeSTiTiHSArHScZnCoZnKArBBTiKFeVMgArTiNBeNScCrArPKCrHFHeMnZnScMgCrNaTiNBMgVSiCrNMgScFHeTiNeHeVMgSNVZnMnCoHBeHeFeSScHeScArKBeHeMnMnCaScCaMgFNSiFeFeFKSiBeTiPKKMgCaMgHFScBeKScLiMnKSCoFTiFePBeArSiBeBTiVLiBeFBeSiCoKSiNFNFeCrNVMnBeZnNeMnBArBPZnTiSHeBFeNeSArCaArCaHeCoNNeBeZnZnBFeHeHBLiHeNCaFMnNaArArScCrBHFZnKCaArBMnHeTiTiNaMgTiPCaZnLiBMnSMgPNeLiBVKHBHeNaLiScArHZnSArMnNaNeFeFTiCrSiHCrFBPKLiLiMgCoKKVMnCaFVSiCaSiFeScNNaPSMnFCaNBeCaSCrSTiVVTiCrBeBeKCoNeCrSiTiPNScMnArNArSKCrScArBNBeBeMnKHCoLiBeBCrCrMnKHNeSiZnFeNaNeArScNKCoNNaScFeFeCaMgMgSNaZnBScHVNArBeCaSiMnCoZnBZnKKZnNeArScMgMnZnArFeMnArBMgSNaLiHFeSiHeSBeCoSCoSHeLiTiNeNaMnCrSLiMnZnVFScFeFeSArBeVCaCaNeMnCrFMgNeTiBeCrNPCrNaSVCaScSiSiKNaPCaCrNHSCaVArTiKSiBeHeNeScCaNeVSCoArVSZnMnMnCrCaSiCoSiBNSBSBeMnSCoMgFeCrFCoHFeHFZnScBeTiBeArNaFeHMnLiZnNaCaTiNBNeTiMgScScFFNeHeMnZnKCrCaHeZnBeScBeHFLiNArNeZnFeCrSHeBTiFTiNeLiSiHeCoLiVKMnCrArCoHSiCrBeNaLiFeNeCrSCaPSHBeBeCoArFHePFSiArSFNaTiHeSiPArBeCaBBeScNeScTiScFArBNFScBHFPHMnMgMnTiCaScCrPKFeFeNaBFeNaZnSiScCaSiNeVHeCaHeBeFCrLiNeZnMgCrKTiCoTiSiBePPFSNaKCoMnPCrPMnScFeZnBArCrBePTiHePNMnFeTiFNHeCrBeHFMgTiNFScTiFNArFArBScSCaSSiHeMnMgVNaNaHVSiLiHFeNVFVBNScNHLiBNaBeVSCoKNaLiKNaPVNaSiNeKFeSPCaLiPNeNaNaCrBeKCoSVMnTiBCaZnCoSiArKCaNeCrLiHeFBeNaCoVPMgSMnArNeMgCaFZnLiNSFSiHNCaTiArArFHBNeNLiTiNaFeNaScLiCrBePNMnPScSFeSiCaArMnScNeArFNFe</div>
+  <span class="sm c1">C</span>
+  <span class="sm c2">C</span>
+  <span class="sm c3">C</span>
+  <span class="sm c4">C</span>
+  <span class="sm c5">C</span>
+  <span class="sm c6">C</span>
+  <span class="sm c7">C</span>
+  <span class="sm c8">C</span>
+  <span class="sm c9">C</span>
+  <span class="sm c10">C</span>
+  <span class="sm c11">C</span>
+  <span class="sm o1">O</span>
+  <span class="sm o2">O</span>
+  <span class="sm o3">O</span>
+  <span class="sm o4">O</span>
+  <span class="sm o5">O</span>
+  <span class="sm o6">O</span>
+  <span class="sm o7">O</span>
+  <span class="sm o8">O</span>
+  <span class="sm o9">O</span>
+  <span class="sm o10">O</span>
+  <span class="sm o11">O</span>
+  <span class="sm o12">O</span>
+  <span class="sm o13">O</span>
+  <span class="sm o14">O</span>
+  <span class="sm o15">O</span>
+  <span class="al al1">Al</span>
+  <span class="al al2">Al</span>
+  <span class="al al3">Al</span>
+  <span class="al al4">Al</span>
+  <span class="al al5">Al</span>
+  <span class="al al6">Al</span>
+  <span class="al al7">Al</span>
+  <span class="al al8">Al</span>
+  <span class="al al9">Al</span>
+  <span class="al al10">Al</span>
+  <span class="al al11">Al</span>
+  <span class="ni ni1">Ni</span>
+  <span class="ni ni2">Ni</span>
+  <span class="ni ni3">Ni</span>
+  <span class="ni ni4">Ni</span>
+  <span class="ni ni5">Ni</span>
+  <span class="ni ni6">Ni</span>
+  <span class="ni ni7">Ni</span>
+  <span class="ni ni8">Ni</span>
+  <span class="ni ni9">Ni</span>
+  <span class="ni ni10">Ni</span>
+  <span class="cu cu1">Cu</span>
+  <span class="cu cu2">Cu</span>
+  <span class="cu cu3">Cu</span>
+  <span class="cu cu4">Cu</span>
+  <span class="cu cu5">Cu</span>
+  <span class="cu cu6">Cu</span>
+  <span class="cu cu7">Cu</span>
+  <span class="cu cu8">Cu</span>
+  <span class="cu cu9">Cu</span>
+  <span class="cu cu10">Cu</span>
+  <span class="cu cu11">Cu</span>
+  <span class="cu cu12">Cu</span>
+
+</body>
+
+<script>
+  const par = document.querySelector('p')
+
+  // C O Al Cl Ni Cu
+
+  // const elements = 'H,He,Li,Be,B,N,F,Ne,Na,Mg,Si,P,S,Ar,K,Ca,Sc,Ti,V,Cr,Mn,Fe,Co,Zn'.split(',')
+
+  // const randChar = () => elements[Math.floor(Math.random() * elements.length)];;
+  // const randStr = n => Array(n).fill().map(randChar).join('')
+
+  // document.body.firstElementChild.innerText = randStr(3000)
+</script>
+</html>
