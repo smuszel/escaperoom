@@ -1,0 +1,19 @@
+main {
+  /* font-family: monospace; */
+  font-family: sans-serif;
+}
+
+div {
+  display: flex
+}
+
+span {
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  color: white;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
