@@ -66,7 +66,7 @@ export const mapB = {
   size: 28,
   cornerWalls: false,
   respawn: { x: 7, y: 16 },
-  onFinish: () => (window.location.href = window.location.origin + '/sokobanFinal.html'),
+  onFinish: () => (window.location.href = window.location.origin + '/escaperoom/sokobanFinal.html'),
   objects: parseMap(mapBRaw),
   holeFilledCallback: objects => {
     const count = objects.reduce(
@@ -81,7 +81,7 @@ export const mapB = {
 export const mapA = {
   size: 8,
   cornerWalls: true,
-  onFinish: () => (window.location.href = window.location.origin + '/sokobanMid.html'),
+  onFinish: () => (window.location.href = window.location.origin + '/escaperoom/sokobanMid.html'),
   respawn: { x: 3, y: 3 },
   objects: [
     {
