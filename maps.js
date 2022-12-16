@@ -3,48 +3,61 @@ const mapBRaw = `
   |  XXXXXXXXXXXXXXXXXX $|
   |  --------------------|
 ---- |    -----           
-|  |1--  --   |           
-|     |--| 1  |           
-| 11  |  |  1 |           
---  11|   11 --           
- |1  1   |1  |            
- | 11 |  |  1|            
- | 1 1---| 1 |            
+|  |0--  --   |           
+|     |--| 0  |           
+| 00  |  |  0 |           
+--  00|   00 --           
+ |0  0   |0  |            
+ | 00 |  |  0|            
+ | 0 0---| 0 |            
  |       |  --            
- ---- 1  | --             
+ ---- 0  | --             
     --- -- |              
-     | 1   |            
+     | 0   |            
      |@ |  |            
      -------            
 `;
 
-const parseMap = str =>
-  str
-    .split('\n')
+const renderChar = (char, x, y) => {
+  if (char === ' ') {
+    return null;
+  } else {
+    return {
+      name:
+        char === '|' || char === '-'
+          ? 'wall'
+          : char === '@'
+          ? 'player'
+          : char === '$'
+          ? 'end'
+          : Number(char) + 1
+          ? 'boulder'
+          : char === '#'
+          ? 'decoration'
+          : 'hole',
+      text: char,
+      x: x + 1,
+      y,
+    };
+  }
+};
+
+const parseMap = (...layers) => {
+  const xs = layers.map(la => la.split('\n'));
+
+  return xs[0]
     .flatMap((fragment, y) => {
       return Array.from(fragment).map((char, x) => {
-        if (char === ' ') {
-          return null;
-        } else {
-          return {
-            name:
-              char === '|' || char === '-'
-                ? 'wall'
-                : char === '@'
-                ? 'player'
-                : char === '$'
-                ? 'end'
-                : Number(char)
-                ? 'boulder'
-                : 'hole',
-            text: char,
-            x: x + 1,
-            y,
-          };
-        }
+        const layerChar = xs[1] && xs[1][y][x];
+        return [
+          renderChar(char, x, y),
+          layerChar && layerChar !== char && renderChar(layerChar, x, y),
+        ];
       });
     })
+    .flat()
     .filter(Boolean);
+};
 
 const placeholders = [
   { name: 'placeholder', text: '|', x: 20, y: 19 },
@@ -66,22 +79,24 @@ export const mapB = {
   size: 28,
   cornerWalls: false,
   respawn: { x: 7, y: 16 },
-  onFinish: () => (window.location.href = window.location.origin + '/escaperoom/sokobanFinal.html'),
+  onFinish: () =>
+    (window.location.href = window.location.origin + '/escaperoom/sokobanFinal.html'),
   objects: parseMap(mapBRaw),
-  holeFilledCallback: objects => {
-    const count = objects.reduce(
-      (acc, obj) => (obj.name === 'placeholder' ? acc + 1 : acc),
-      0,
-    );
+  // holeFilledCallback: objects => {
+  //   const count = objects.reduce(
+  //     (acc, obj) => (obj.name === 'placeholder' ? acc + 1 : acc),
+  //     0,
+  //   );
 
-    return count < placeholders.length ? [...objects, placeholders[count]] : objects;
-  },
+  //   return count < placeholders.length ? [...objects, placeholders[count]] : objects;
+  // },
 };
 
 export const mapA = {
   size: 8,
   cornerWalls: true,
-  onFinish: () => (window.location.href = window.location.origin + '/escaperoom/sokobanMid.html'),
+  onFinish: () =>
+    (window.location.href = window.location.origin + '/escaperoom/sokobanMid.html'),
   respawn: { x: 3, y: 3 },
   objects: [
     {
@@ -91,22 +106,22 @@ export const mapA = {
       y: 3,
     },
     {
-      text: '1',
+      text: '0',
       name: 'boulder',
       x: 4,
       y: 3,
     },
     {
-      text: '1',
+      text: '0',
       name: 'boulder',
       x: 3,
       y: 4,
     },
     {
-      text: '1',
+      text: '0',
       name: 'boulder',
-      x: 5,
-      y: 3,
+      x: 6,
+      y: 2,
     },
     {
       text: 'X',
@@ -151,45 +166,43 @@ export const mapA = {
 // --..  .-..  .
 
 const mapCRaw = `
-@
- 8    
- 4  
- 497231
+@    |
+ |-- |-0 0 00  
+-|  00   0      
+ |-    000000    
+ | 000 |   0 
+ | 0 0000   0  
+  0XXXXXX0  0  
+  XXXX XX0----
+ 0XX XX X -  
+- X0X X X0  0
+ 0XXXXXX0X  0
+  X XX00XX    
+ 0XXX0XX0X 
+        | 
+`;
 
-
- νωγχ  φδϑ  σβμο
-    123
- ηπρλ 5εακτ  ζ
-   7  4
-    3178 8
-    5
+const mapCLayer = `
+@    |
+  -- 000 0    
+    00   0    
+  0    00000       
+   000 |
+   0 0000      
+  #XXXXXX0
+  #XXX XX0----
+ 0#X XX X - 
+  # X X ##    
+ 0#XXXX#0#
+  # XX#0X#
+ 0########
+           
 `;
 
 export const mapC = {
-  size: 20,
+  size: 16,
   cornerWalls: true,
-  objects: parseMap(mapCRaw),
+  objects: parseMap(mapCRaw, mapCLayer),
   respawn: { x: 1, y: 1 },
-  solutions: {
-    α: 4,
-    β: 8,
-    γ: 8,
-    δ: 3,
-    ζ: 7,
-    ϑ: 4,
-    ε: 5,
-    η: 8,
-    π: 2,
-    χ: 3,
-    φ: 5,
-    μ: 7,
-    κ: 1,
-    ω: 2,
-    ο: 9,
-    λ: 3,
-    ρ: 1,
-    ν: 1,
-    σ: 4,
-    τ: 7,
-  },
+  solutions: {},
 };

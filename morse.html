@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>-..</title>
+</head>
+<style>
+  body { 
+    background: #2b3e50;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+  }
+
+  div {
+    position: relative;
+  }
+
+  button {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 69px;
+  }
+</style>
+<body>
+
+  <audio src="./morsecode.wav"></audio>
+
+  <div>
+    <button>START</button>
+    <canvas id="pl"></canvas>
+  </div>
+  
+</body>
+
+<script type="module">
+  import PatternLock from './patternLock/PatternLock.js'
+
+  const button = document.querySelector('button');
+
+  button.addEventListener('click', ev => {
+    setTimeout(() => {
+      document.querySelector('audio').play()
+    }, 1000);
+    button.remove();
+  })
+
+  const pl = PatternLock({
+    $canvas: document.querySelector('#pl'),
+    width: 300,
+    height: 430,
+    grid: [ 3, 3 ],
+  });
+
+  pl.onComplete(({ hash }) => {
+    pl.setThemeState(hash === 'LTE3MDQyNjI5' ? 'success' : 'failure');
+    pl.destroy();
+  })
+</script>
+</html>

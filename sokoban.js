@@ -1,3 +1,9 @@
+document.documentElement.style.setProperty('--decorationColor', 'gold');
+const styles = document.createElement('style');
+styles.innerHTML =
+  '.decoration { color: var(--decorationColor); background: var(--decorationColor); }';
+document.getElementsByTagName('head')[0].appendChild(styles);
+
 const codes = {
   ArrowUp: [0, -1],
   ArrowRight: [1, 0],
@@ -24,7 +30,7 @@ export default map => {
     let next2ObjUpdate = null;
     let objectsUpdated = objects;
 
-    if (!nextObject) {
+    if (!nextObject || nextObject.name === 'decoration') {
       objUpdate = { x: nextX, y: nextY };
     } else if (nextObject.name === 'boulder' && !next2Object) {
       objUpdate = { x: nextX, y: nextY };
@@ -119,8 +125,12 @@ export default map => {
     tiles.forEach((tile, ix) => {
       const obj = findObjectByIx(ix);
       tile.el.innerText = obj && obj.text ? obj.text : '';
+      tile.el.className = obj && obj.text ? obj.name : 'empty';
       obj && obj.name === 'placeholder' && (tile.el.style.color = 'yellow');
     });
+
+    if (!objects.find(obj => obj.name === 'hole' && obj.x > -1 && obj.y > -1))
+      document.documentElement.style.setProperty('--decorationColor', 'yellowgreen');
   };
 
   document.body.appendChild(main);

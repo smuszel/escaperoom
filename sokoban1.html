@@ -18,6 +18,8 @@
 
   sokoban(mapA)
 
-  // setTimeout(() => alert('Use arrow keys to move @. Press z to undo'), 500)
+  const explanation = document.createElement('div')
+  explanation.innerText = 'Move "@" to "$". Use arrow keys, z to undo move'
+  document.body.appendChild(explanation)
 </script>
 </html>
