@@ -10,7 +10,7 @@ const symbolIxs = [
   57, 60,
 ];
 
-const hints = [4, 13, 30, 64, 66, 67, 80, 7, 33];
+const hints = [4, 13, 30, 55, 64, 66, 67, 80, 7, 33];
 
 const cellSize = 60;
 
