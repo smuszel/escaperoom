@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pierogi converter</title>
+</head>
+<body>
+
+  <input type="text" placeholder="ilosc pierogow" id="qu" />
+
+  <button id="ok">ok</button>
+  
+</body>
+<script>
+  const flour = 500
+  const water = 250
+  const oil = 50
+  const cheese = 300
+  const onion = 300
+  const potatoes = 500
+  const butter = 30
+
+
+  document.querySelector('#ok').addEventListener('click', ev => {
+    const qu = Number(document.querySelector('#qu').value) / 60
+
+
+    alert(`
+      flour: ${parseInt(qu * flour)} g 
+      water: ${parseInt(qu * water)} ml
+      oil: ${parseInt(qu * oil)} ml
+      cheese: ${parseInt(qu * cheese)} g
+      onion: ${parseInt(qu * onion)} g
+      potatoes: ${parseInt(qu * potatoes)} g
+      button: ${parseInt(qu * butter)} g
+    `)
+  })
+
+
+</script>
+
+</html>
