@@ -13,8 +13,12 @@ const codes = {
 
 export default map => {
   const size = map.size;
-  const findObjectByIx = ix =>
-    objects.find(obj => obj.x === ixToCoord(ix).x && obj.y === ixToCoord(ix).y);
+  const findObjectByIx = ix => {
+    const idx = objects.findIndex(
+      obj => obj.x === ixToCoord(ix).x && obj.y === ixToCoord(ix).y,
+    );
+    return [objects[idx], idx];
+  };
   const findObjectByCoord = (x, y) => objects.find(obj => obj.x === x && obj.y === y);
   const ixToCoord = ix => ({ x: ix % size, y: Math.floor(ix / size) });
 
@@ -48,12 +52,12 @@ export default map => {
           text: Number(nextObject.text) % 2 ? '.' : '-',
         };
       } else if (map.holeFilledCallback) {
-        objectsUpdated = map.holeFilledCallback(objects);
+        objectsUpdated = map.holeFilledCallback(objects, nextObject, next2Object);
       }
     } else if (nextObject.name === 'hole') {
       objUpdate = { x: map.respawn.x, y: map.respawn.y };
     } else if (nextObject.name === 'end') {
-      map.onFinish();
+      map.onFinish(nextObject.name);
     }
 
     if (objUpdate || nextObjUpdate || next2ObjUpdate) {
@@ -123,9 +127,10 @@ export default map => {
 
   const render = () => {
     tiles.forEach((tile, ix) => {
-      const obj = findObjectByIx(ix);
+      const [obj, idx] = findObjectByIx(ix);
       tile.el.innerText = obj && obj.text ? obj.text : '';
       tile.el.className = obj && obj.text ? obj.name : 'empty';
+      tile.el.setAttribute('idx', idx);
       obj && obj.name === 'placeholder' && (tile.el.style.color = 'yellow');
     });
 

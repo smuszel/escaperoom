@@ -5,10 +5,11 @@ const borderSize = 3;
 const solution =
   '369175248218496753745832196451736982962185374378429561627813594531649827984257613';
 
-const symbolIxs = [
-  0, 1, 2, 9, 10, 11, 18, 19, 20, 23, 26, 47, 50, 49, 48, 41, 40, 39, 31, 30, 32, 33, 54,
-  57, 60,
-];
+const symbolIxs1 = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
+const symbolIxs2 = [36, 37, 38, 39, 40, 41, 42, 43, 44];
+
+const symbolIxs3 = [72, 73, 74, 75, 76, 77, 78, 79, 80];
 
 const hints = [4, 13, 30, 55, 64, 66, 67, 80, 7, 33];
 
@@ -397,7 +398,9 @@ document.addEventListener('input', ev => {
   const fail = () => cells.forEach(cell => (cell.style.backgroundColor = 'red'));
   const reveal = () =>
     cells.forEach((cell, ix) => {
-      return symbolIxs.includes(ix) && (cell.style.backgroundColor = 'green');
+      symbolIxs1.includes(ix) && (cell.style.backgroundColor = 'blue');
+      symbolIxs2.includes(ix) && (cell.style.backgroundColor = 'yellow');
+      symbolIxs3.includes(ix) && (cell.style.backgroundColor = 'orange');
     });
 
   const solved = cells.map(c => c.innerText).join('') === solution;

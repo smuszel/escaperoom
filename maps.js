@@ -24,7 +24,7 @@ const renderChar = (char, x, y) => {
   } else {
     return {
       name:
-        char === '|' || char === '-'
+        char === '|' || char === '-' || char === '+'
           ? 'wall'
           : char === '@'
           ? 'player'
@@ -205,4 +205,105 @@ export const mapC = {
   objects: parseMap(mapCRaw, mapCLayer),
   respawn: { x: 1, y: 1 },
   solutions: {},
+};
+
+const mapB2Raw = `
+--------------------------
+|@     XXXXXXXXXXXXXXXXXX|
+|       ----------------$|
+------- ------         |-|
+ |           |          
+ | 0 0 0 0 0 |          
+-------- ----|          
+|   0 0  0 0 |          
+|   0        |          
+----- --------          
+ |  0 0 0   |   
+ |     0    |   
+ | 0 0   0 --   
+------- ----   
+|  0     |      
+|        |      
+|   ------      
+-----           
+`;
+
+const mapB3Raw = `
+--------------------------
+|                        |
+|       ---------------- |
+------- ------    ---  | |
+ |           |    |$|  | |
+ |           |    | |  | |
+-------- ----|    | |  | |
+| 1     7    |    | |  | |
+|   4 6    1 |    | |  | |
+----- -------- ----+---| |
+ | E   D    |  |   7   | |
+ |        F |  | A8    | |
+ | A B C   --  |   11  | |
+ ------------  | D @   + |
+               | D     |--
+               | H  64 |
+               | X   9 |
+               -----+---
+                   | |
+ |--------------|  | |
+ |              |--| |  
+ |3579246815793      |
+ |HUNDERTWASSER |-----
+ |--------------|
+`;
+
+export const mapB2 = {
+  size: 28,
+  cornerWalls: false,
+  respawn: { x: 2, y: 2 },
+  onFinish: () =>
+    (window.location.href =
+      window.location.origin + '/escaperoom/sokobanPenultimate.html'),
+
+  objects: parseMap(mapB2Raw),
+};
+
+const solvesB3 = {
+  '4C': 'A',
+  '7A': 'A',
+  '6B': 'A',
+
+  '1D': 'B',
+  '1H': 'B',
+  '4A': 'B',
+  '6D': 'B',
+
+  '8W': 'C',
+  '3R': 'C',
+  '5S': 'C',
+};
+
+export const mapB3 = {
+  size: 28,
+  cornerWalls: false,
+  respawn: { x: 2, y: 2 },
+  onFinish: () =>
+    (window.location.href = window.location.origin + '/escaperoom/sokobanFinal.html'),
+  holeFilledCallback: (ox, no1, no2) => {
+    delete solvesB3[no1.text + no2.text];
+
+    return ox.map(obj => {
+      const solves = Object.values(solvesB3).join('');
+      const oob =
+        (obj.text === '+' && obj.y === 10 && !solves.includes('C')) ||
+        (obj.text === '+' && obj.y === 14 && !solves.includes('B')) ||
+        (obj.text === '+' && obj.y === 18 && !solves.includes('A'));
+
+      if (oob) {
+        return { ...obj, x: -1, y: -1 };
+      } else {
+        return obj;
+      }
+    });
+  },
+
+  objects: parseMap(mapB3Raw),
 };
