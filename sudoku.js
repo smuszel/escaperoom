@@ -398,9 +398,9 @@ document.addEventListener('input', ev => {
   const fail = () => cells.forEach(cell => (cell.style.backgroundColor = 'red'));
   const reveal = () =>
     cells.forEach((cell, ix) => {
-      symbolIxs1.includes(ix) && (cell.style.backgroundColor = 'blue');
+      symbolIxs1.includes(ix) && (cell.style.backgroundColor = 'black');
       symbolIxs2.includes(ix) && (cell.style.backgroundColor = 'yellow');
-      symbolIxs3.includes(ix) && (cell.style.backgroundColor = 'orange');
+      symbolIxs3.includes(ix) && (cell.style.backgroundColor = 'red');
     });
 
   const solved = cells.map(c => c.innerText).join('') === solution;
